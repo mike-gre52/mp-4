@@ -1,12 +1,13 @@
 
-import getData from "@/lib/getData";
+import getData from "@/lib/getBookData";
 import {BookTypes} from "@/types/BookTypes";
 import Link from "next/link";
+import getBookData from "@/lib/getBookData";
 
 
 export default async function Home() {
     let books: BookTypes[] = [];
-    await getData().then(data => {
+    await getBookData().then(data => {
         books = Array.isArray(data.books)? data.books.flat() : [];
     }).catch(e => {
             books = [];
