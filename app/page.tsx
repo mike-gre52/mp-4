@@ -5,14 +5,16 @@ import Link from "next/link";
 
 
 export default async function Home() {
-    let books: BookTypes[] = [];
-    await getData().then(data => {
-        books = Array.isArray(data.books)? data.books.flat() : [];
-    }).catch(e => {
-            books = [];
-    })
-    //console.log(data);
+    // let books: BookTypes[] = [];
+    // await getData().then(data => {
+    //     books = Array.isArray(data.books)? data.books.flat() : [];
+    // }).catch(e => {
+    //         books = [];
+    // })
+    // //console.log(data);
 
+    const data = await getData();
+    const books = Array.isArray(data.books)? data.books.flat() : [];
     return (
         <>
             <Link className={"mt-6 text-emerald-600 m-6"} href='/about' >About</Link>
