@@ -1,5 +1,3 @@
-
-import getData from "@/lib/getBookData";
 import {BookTypes} from "@/types/BookTypes";
 import Link from "next/link";
 import getBookData from "@/lib/getBookData";
